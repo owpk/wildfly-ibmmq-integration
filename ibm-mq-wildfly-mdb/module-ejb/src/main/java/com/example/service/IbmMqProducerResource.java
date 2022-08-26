@@ -9,7 +9,6 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 
 @Stateless(name = "ibmMqProducer")
-@Path("/message")
 public class IbmMqProducerResource {
 
     @Resource(mappedName = "java:jboss/IbmMqConnectionFactory")
@@ -18,8 +17,6 @@ public class IbmMqProducerResource {
     @Resource(mappedName = "java:jboss/TestQueue")
     Queue queue;
 
-    @GET
-    @Path("/{msg}")
     public String publishMessage(@PathParam("msg") String msg) throws JMSException {
         try (JMSContext context = cf.createContext()) {
             TextMessage m = context.createTextMessage(msg);

@@ -1,6 +1,8 @@
 version: '3'
 services:
   ibmmq:
+    #build:
+    #  dockerfile: Dockerfile-mq
     image: "ibmcom/mq"
     environment:
       - LICENSE=accept
@@ -9,7 +11,8 @@ services:
       - 1414:1414
       - 9443:9443
   web:
-    build: .
+    build:
+      dockerfile: Dockerfile-web
     ports:
       - 8080:8080
       - 9990:9990
