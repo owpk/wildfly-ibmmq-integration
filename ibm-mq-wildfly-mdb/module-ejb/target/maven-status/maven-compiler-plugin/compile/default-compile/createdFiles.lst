@@ -1,0 +1,5 @@
+com/example/service/AliveInfoService.class
+com/example/service/SimpleScheduler.class
+com/example/service/ExampleService.class
+com/example/service/IbmMqConsumerMDB.class
+com/example/service/IbmMqProducerResource.class
