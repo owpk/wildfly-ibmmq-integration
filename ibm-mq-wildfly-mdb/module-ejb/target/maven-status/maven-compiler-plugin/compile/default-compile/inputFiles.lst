@@ -1,5 +1,5 @@
-/home/owpk/gh/wildfly-ibmmq/integrating-ibm-mq-with-wildfly/ibm-mq-wildfly-mdb/module-ejb/src/main/java/com/example/service/ExampleService.java
-/home/owpk/gh/wildfly-ibmmq/integrating-ibm-mq-with-wildfly/ibm-mq-wildfly-mdb/module-ejb/src/main/java/com/example/service/IbmMqProducerResource.java
-/home/owpk/gh/wildfly-ibmmq/integrating-ibm-mq-with-wildfly/ibm-mq-wildfly-mdb/module-ejb/src/main/java/com/example/service/SimpleScheduler.java
-/home/owpk/gh/wildfly-ibmmq/integrating-ibm-mq-with-wildfly/ibm-mq-wildfly-mdb/module-ejb/src/main/java/com/example/service/AliveInfoService.java
-/home/owpk/gh/wildfly-ibmmq/integrating-ibm-mq-with-wildfly/ibm-mq-wildfly-mdb/module-ejb/src/main/java/com/example/service/IbmMqConsumerMDB.java
+/mnt/c/share/gh/wildfly-ibmmq-integration/ibm-mq-wildfly-mdb/module-ejb/src/main/java/com/example/service/IbmMqConsumerMDB.java
+/mnt/c/share/gh/wildfly-ibmmq-integration/ibm-mq-wildfly-mdb/module-ejb/src/main/java/com/example/service/SimpleScheduler.java
+/mnt/c/share/gh/wildfly-ibmmq-integration/ibm-mq-wildfly-mdb/module-ejb/src/main/java/com/example/service/AliveInfoService.java
+/mnt/c/share/gh/wildfly-ibmmq-integration/ibm-mq-wildfly-mdb/module-ejb/src/main/java/com/example/service/ExampleService.java
+/mnt/c/share/gh/wildfly-ibmmq-integration/ibm-mq-wildfly-mdb/module-ejb/src/main/java/com/example/service/IbmMqProducerResource.java

@@ -1,7 +1,5 @@
 package com.example.service;
 
-import org.jboss.ejb3.annotation.ResourceAdapter;
-
 import javax.ejb.ActivationConfigProperty;
 import javax.ejb.MessageDriven;
 import javax.jms.Message;
