@@ -1,3 +1,4 @@
+# Run
 Change directory to 'ibm-mq-wildfly-mdb', execute 'run.sh' script  
 go to 'localhost:8080/rest/members/{your_message}' to send message to ibm mq
 
