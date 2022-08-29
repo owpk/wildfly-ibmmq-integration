@@ -1,4 +1,10 @@
 # Run
+- Prerequisites:
+```
+java >= 1.8
+maven
+docker, docker compose
+```
 Change directory to 'ibm-mq-wildfly-mdb', execute 'run.sh' script  
 go to 'localhost:8080/rest/members/{your_message}' to send message to ibm mq
 
