@@ -11,13 +11,13 @@ if (outcome != success) of /subsystem=resource-adapters/resource-adapter=wmq.jms
     /subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=mq-cd/config-properties=userName:add(value=${websphere.username})
     /subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=mq-cd/config-properties=password:add(value=${websphere.password})
 
-    /subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/admin-objects=queue-ao:add(class-name=com.ibm.mq.connector.outbound.MQQueueProxy, jndi-name=java:jboss/TestQueue)
+    /subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/admin-objects=queue-ao:add(class-name=com.ibm.mq.connector.outbound.MQQueueProxy, jndi-name=java:/TestQueue)
     /subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/admin-objects=queue-ao/config-properties=baseQueueName:add(value=${websphere.queueName})
 
     /system-property=websphere.channel:add(value="DEV.ADMIN.SVRCONN")
     /system-property=websphere.queueManager:add(value="QM1")
     /system-property=websphere.connectionNameList:add(value="ibmmq (1414)")
-    /system-property=websphere.queueName:add(value="DEV.QUEUE.1")
+    /system-property=websphere.queueName:add(value="DEV.QUEUE.2")
     /system-property=websphere.resource.adapter:add(value="wmq.jmsra.rar")
 		/system-property=websphere.transportType:add(value="CLIENT")
 		/system-property=websphere.username:add(value="admin")

@@ -2,10 +2,7 @@ package com.example.service;
 
 import javax.annotation.Resource;
 import javax.ejb.Stateless;
-import javax.enterprise.context.RequestScoped;
 import javax.jms.*;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 
 @Stateless(name = "ibmMqProducer")
@@ -14,7 +11,7 @@ public class IbmMqProducerResource {
     @Resource(mappedName = "java:jboss/IbmMqConnectionFactory")
     ConnectionFactory cf;
 
-    @Resource(mappedName = "java:jboss/TestQueue")
+    @Resource(mappedName = "java:/TestQueue")
     Queue queue;
 
     public String publishMessage(@PathParam("msg") String msg) throws JMSException {
