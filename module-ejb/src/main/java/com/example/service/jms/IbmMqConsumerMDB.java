@@ -1,4 +1,8 @@
-package com.example.service;
+package com.example.service.jms;
+
+import com.example.service.utils.LoggerUtils;
+import lombok.extern.log4j.Log4j2;
+import org.apache.logging.log4j.Logger;
 
 import javax.ejb.ActivationConfigProperty;
 import javax.ejb.MessageDriven;
@@ -13,8 +17,10 @@ import javax.jms.MessageListener;
         @ActivationConfigProperty(propertyName = "acknowledgeMode", propertyValue = "Auto-acknowledge") })
 public class IbmMqConsumerMDB implements MessageListener {
 
+    private static final Logger log = LoggerUtils.getLogger(MessageListener.class);
+
     @Override
     public void onMessage(Message m) {
-        System.out.println(">> Received message: " + m);
+        log.info(">> Received message: " + m);
     }
 }

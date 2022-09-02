@@ -1,14 +1,19 @@
 embed-server --server-config=${server.config:standalone-full.xml} --std-out=echo
 
+# logger config
+ /subsystem=logging:write-attribute(name=use-deployment-logging-config, value=false)
+ /system-property=log4j.configurationFile:add(value=${env.JBOSS_HOME}/standalone/configuration/log4j2.xml)
+
 if (outcome != success) of /subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/:read-resource
 	# legal values for transaction-support are [NoTransaction, LocalTransaction, XATransaction]
 	/subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar:add(archive=wmq.jmsra.rar, transaction-support=NoTransaction)
 	/subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=mq-cd:add(class-name=com.ibm.mq.connector.outbound.ManagedConnectionFactoryImpl, jndi-name=java:jboss/IbmMqConnectionFactory)
     /subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=mq-cd/config-properties=channel:add(value=${websphere.channel})
     /subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=mq-cd/config-properties=transportType:add(value=${websphere.transportType:CLIENT})
-    /subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=mq-cd/config-properties=connectionNameList:add(value=${websphere.connectionNameList})
+    /subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=mq-cd/config-properties=hostName:add(value=${websphere.hostName})
+    /subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=mq-cd/config-properties=port:add(value=${websphere.port})
     /subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=mq-cd/config-properties=queueManager:add(value=${websphere.queueManager})
-    /subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=mq-cd/config-properties=userName:add(value=${websphere.username})
+    /subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=mq-cd/config-properties=username:add(value=${websphere.username})
     /subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/connection-definitions=mq-cd/config-properties=password:add(value=${websphere.password})
 
     /subsystem=resource-adapters/resource-adapter=wmq.jmsra.rar/admin-objects=queue-ao:add(class-name=com.ibm.mq.connector.outbound.MQQueueProxy, jndi-name=java:/TestQueue)
@@ -16,14 +21,13 @@ if (outcome != success) of /subsystem=resource-adapters/resource-adapter=wmq.jms
 
     /system-property=websphere.channel:add(value="DEV.ADMIN.SVRCONN")
     /system-property=websphere.queueManager:add(value="QM1")
-    /system-property=websphere.connectionNameList:add(value="ibmmq (1414)")
+    /system-property=websphere.hostName:add(value="ibmmq")
+    /system-property=websphere.port:add(value="1414")
     /system-property=websphere.queueName:add(value="DEV.QUEUE.2")
     /system-property=websphere.resource.adapter:add(value="wmq.jmsra.rar")
 		/system-property=websphere.transportType:add(value="CLIENT")
 		/system-property=websphere.username:add(value="admin")
 		/system-property=websphere.password:add(value="passw0rd")
 
-
 		/system-property=ejb.resource-adapter-name:add(value="wmq.jmsra.rar")
-
 end-if

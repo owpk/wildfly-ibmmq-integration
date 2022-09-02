@@ -3,6 +3,7 @@ FROM quay.io/wildfly/wildfly
 # First, use the management CLI to add the resource adapter and configure it
 ADD install-ibm-mq-offline.cli "$JBOSS_HOME/customization/"
 ADD cors.cli "$JBOSS_HOME/customization/"
+ADD log4j2.xml "$JBOSS_HOME/standalone/configuration/"
 
 RUN set -x && \
     "$JBOSS_HOME/bin/jboss-cli.sh" --file="$JBOSS_HOME/customization/install-ibm-mq-offline.cli" && \
