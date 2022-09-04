@@ -1,7 +1,6 @@
 package com.example.service.jms;
 
 import com.example.service.utils.LoggerUtils;
-import lombok.extern.log4j.Log4j2;
 import org.apache.logging.log4j.Logger;
 
 import javax.ejb.ActivationConfigProperty;

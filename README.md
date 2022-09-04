@@ -6,7 +6,7 @@ maven
 docker, docker compose
 ```
 Change directory to 'ibm-mq-wildfly-mdb', execute 'run.sh' script  
-go to 'localhost:8080/jms/send/{your_message}' to send message to ibm mq
+go to 'localhost:8080/rest/jms/send/{your_message}' to send message to ibm mq
 
 
 # integrating-ibm-mq-with-wildfly
