@@ -7,7 +7,7 @@ ADD log4j2.xml "$JBOSS_HOME/standalone/configuration/"
 
 RUN set -x && \
     "$JBOSS_HOME/bin/jboss-cli.sh" --file="$JBOSS_HOME/customization/install-ibm-mq-offline.cli" && \
-#		"$JBOSS_HOME/bin/jboss-cli.sh" --file="$JBOSS_HOME/customization/cors.cli" && \
+		"$JBOSS_HOME/bin/jboss-cli.sh" --file="$JBOSS_HOME/customization/cors.cli" && \
     rm -rf "$JBOSS_HOME/standalone/configuration/standalone_xml_history"
 
 # Then, deploy the resource adapter by copying the wmq.jmsra.rar file to the JBOSS_HOME/standalone/deployments/ directory

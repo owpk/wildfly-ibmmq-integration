@@ -1,9 +1,10 @@
-version: '3'
+version: '3.3'
 services:
   ibmmq:
     #build:
     #  dockerfile: Dockerfile-mq
-    image: "ibmcom/mq"
+    # image: "ibmcom/mq"
+    image: "icr.io/ibm-messaging/mq:latest"
     environment:
       - LICENSE=accept
       - MQ_QMGR_NAME=QM1
@@ -18,4 +19,3 @@ services:
       - 9990:9990
     depends_on:
       - ibmmq
-

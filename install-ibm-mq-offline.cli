@@ -25,9 +25,9 @@ if (outcome != success) of /subsystem=resource-adapters/resource-adapter=wmq.jms
     /system-property=websphere.port:add(value="1414")
     /system-property=websphere.queueName:add(value="DEV.QUEUE.2")
     /system-property=websphere.resource.adapter:add(value="wmq.jmsra.rar")
-		/system-property=websphere.transportType:add(value="CLIENT")
-		/system-property=websphere.username:add(value="admin")
-		/system-property=websphere.password:add(value="passw0rd")
+	/system-property=websphere.transportType:add(value="CLIENT")
+	/system-property=websphere.username:add(value="admin")
+	/system-property=websphere.password:add(value="passw0rd")
 
-		/system-property=ejb.resource-adapter-name:add(value="wmq.jmsra.rar")
+	/system-property=ejb.resource-adapter-name:add(value="wmq.jmsra.rar")
 end-if
